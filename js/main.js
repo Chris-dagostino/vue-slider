@@ -34,8 +34,20 @@ const vue = new Vue ({
     },
     methods: {
 
-    }
+        previous () {
+            this.active--;
+            if (this.active < 0){
+                this.active = this.items.length -1;
+            }
+        },
 
+        next () {
+            this.active++;
+            if (this.active == this.items.length){
+                this.active = 0;
+            }
+        }
+    }
 });
 
 
